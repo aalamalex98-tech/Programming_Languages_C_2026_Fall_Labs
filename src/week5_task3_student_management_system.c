@@ -201,8 +201,8 @@ void add_student(Student arr[], int* count) {
   errno = 0;
   gpa = strtof(input, &end);
 
-  if (input[0] == '\0' || *end != '\0' || errno == ERANGE || gpa < 0.0f ||
-      gpa > 4.0f) {
+  if (input[0] == '\0' || *end != '\0' || errno == ERANGE ||
+      !(gpa >= 0.0f && gpa <= 4.0f)) {
     printf("Invalid input. Student not added.\n");
     return;
   }
